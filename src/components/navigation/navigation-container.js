@@ -19,7 +19,7 @@ const NavigationContainer = (props) => {
     const handleSignOut = () => {
         axios
             .delete("https://api.devcamp.space/logout",
-                { withCredentials: true }
+                { withCredentials: false }
             )
             .then(response => {
                 if (response.status === 200) {

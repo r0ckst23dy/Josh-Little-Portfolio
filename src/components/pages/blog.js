@@ -118,6 +118,7 @@ class Blog extends Component {
   componentWillUnmount() {
     window.removeEventListener("scroll", this.onScroll.false);
   }
+  
   render() {
     const blogRecords = this.state.blogItems.map(blogItem => {
       if (this.props.loggedInStatus === "LOGGED_IN") {
