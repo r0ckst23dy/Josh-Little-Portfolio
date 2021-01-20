@@ -48,14 +48,14 @@ export default class BlogForm extends Component {
 
   // TODO use destructoring for this method
   componentWillMount() {
-    const { id, title, blog_status, content } = this.props.blog;
+    const { title, blog_status, content } = this.props.blog;
     if (this.props.editMode) {
       this.setState({
         blog: this.props.blog,
-        id: this.props.blog.id,
-        title: this.props.blog.title,
-        blog_status: this.props.blog.blog_status,
-        content: this.props.blog.content,
+        // id: this.props.blog.id,
+        // title: this.props.blog.title,
+        // blog_status: this.props.blog.blog_status,
+        // content: this.props.blog.content,
         apiUrl: `https://api.devcamp.space/portfolio/portfolio_blogs/${this.props.blog.id}`,
         apiAction: "patch"
       });
