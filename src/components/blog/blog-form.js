@@ -32,7 +32,7 @@ export default class BlogForm extends Component {
 
   deleteImage(imageType) {
     axios
-      .delete(`https://api.devcamp.space/portfolio/delete-portfolio-blog-image/${this.props.blog.id}?image_type=${imageType}`,
+      .delete(`https://jtlittle.devcamp.space/portfolio/delete-portfolio-blog-image/${this.props.blog.id}?image_type=${imageType}`,
         { withCredentials: true }
       )
       .then(response => {
@@ -48,7 +48,7 @@ export default class BlogForm extends Component {
 
   // TODO use destructoring for this method
   componentWillMount() {
-    const { title, blog_status, content } = this.props.blog;
+    const { id, title, blog_status, content } = this.props.blog;
     if (this.props.editMode) {
       this.setState({
         blog: this.props.blog,
@@ -56,7 +56,7 @@ export default class BlogForm extends Component {
         // title: this.props.blog.title,
         // blog_status: this.props.blog.blog_status,
         // content: this.props.blog.content,
-        apiUrl: `https://api.devcamp.space/portfolio/portfolio_blogs/${this.props.blog.id}`,
+        apiUrl: `https://jtlittle.devcamp.space/portfolio/portfolio_blogs/${this.props.blog.id}`,
         apiAction: "patch"
       });
     }
